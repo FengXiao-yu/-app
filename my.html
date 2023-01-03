@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <title>728冯晓宇</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/pub.css">
+    <script src="./fonts/iconfont.js"></script>
+    <style>
+        body{
+            background-color: rgb(239, 239, 239);
+        }
+        /* 上导航 */
+        .wodeheader{
+            display: flex;  
+            padding: 4px 0;   
+            background-color: rgb(172, 8, 8);
+        }
+        .wodeheader>span{  
+            font-size: 20px;
+            padding: 0 4px;   
+            color: #fff;
+            line-height: 20px;   
+        } 
+        .wodeheader>div{   
+            flex-grow: 1;   
+            display: flex;   
+            background-color: #fff;
+            border-radius: 18px;   
+            padding-right: 5px;  
+        }
+        .wodeheader .icon-sousuo,.wodeheader .icon-voice{
+            font-size: 20px;
+            margin: 8px;  
+            color: #888;
+            line-height: 20px; 
+        }
+        .wodeheader input{  
+            background-color: #fff;   
+            border: none;    
+            flex-grow: 1;   
+            outline: none;   
+            line-height: 20px; 
+        }
+        .wodeheader p{
+            font-size: 12px;
+        }
+        /* 红背景 */
+        .hongbeijing{
+            background-color: rgb(172, 8, 8);
+        }
+        .hongbeijing .ljdl{
+            padding:  20px;
+            padding-bottom: 10px;
+            display: flex;
+        }
+        .ljdl .iconfont{
+            color: #fff;
+            padding: 10px;
+            font-size: 70px;
+        }
+        .ljdl .fxy{
+            flex-grow: 1;
+            padding-top: 15px;
+            line-height: 32px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .ljdl p{
+            font-size: 10px;
+            color: #fff;
+            font-weight: normal;
+        }
+        .hongbeijing .dzkh{
+            margin: 20px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            background-color: rgb(255, 221, 157);
+            border-radius: 10px 10px 0 0;
+            display: flex;
+        }
+        .dzkh .icon-shuaxin,.dzkh .icon-youjiantou6{
+            font-size: 20px;
+            margin:  5px;
+            line-height: 28px;
+        }
+        .dzkh .ckzxqy,.dzkh .zi{
+            font-size: 14px;
+            line-height: 28px;
+            flex-grow: 1;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        /* 待办 */
+        .db{
+            display: flex;
+            font-size: 14px;
+            margin: 0 8px;
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 14px;
+        }
+        .db .kuang{
+            color: rgb(249, 17, 17);
+            border: 1px solid rgb(248, 6, 6);
+            border-radius:5px;
+            margin: 8px;
+            margin-left: 15px;
+        }
+        .db .dian{
+            flex-grow: 1;
+            color: #000;
+            margin: 8px;
+        }
+        /* 四个图标 */
+        .sige,.wdzc,.bysz,.zxcx,.wdwd,.sanhangzi{ /* 四个图标，我的资产，本月收支，征信查询，我的网点，三行文字 */
+            margin: 8px;
+            background-color: #fff;
+            border: 2px solid #fff;
+            border-radius: 14px;
+        }
+        .sige .wodesige{
+            display: flex;  
+            flex-wrap: wrap;   
+            padding: 10px; 
+        }
+        .wodesige .icon{
+            font-size: 25px;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .wodesige span{
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            line-height: 32px;
+        }
+        .wodesige>li{
+            width: 22%;
+            margin: 0 5px;
+            line-height: 28px;  
+            font-size: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: #000;
+        }
+        /* 我的资产 */
+        .wdzc .diyihang,.wdzc .dierhang{
+            display: flex;
+            line-height: 32px;
+            margin: 8px;
+        }
+        .diyihang h4{
+            font-size: 16px;
+            color: #000;
+        }
+        .diyihang .iconfont{
+            font-size: 20px;
+            color: #888;
+            margin: 0 8px;
+        }
+        .diyihang .time{
+            flex-grow: 1;
+            font-size: 12px;
+            text-align: right;
+            color: #888;
+        }
+        .dierhang .zc{
+            font-size: 12px;
+            color: #333;
+        }
+        .dierhang .iconfont{
+            flex-grow: 1;
+            font-size: 18px;
+            color: #333;
+            margin-left: 0;
+        }
+        .wdzc .fuhao{
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            line-height: 32px;
+            margin: 8px;
+        }
+        /* 本月收支 */
+        .bysz h4,.zxcx h4,.biaoti h4{  /* 本月收支，征信查询，我的网点 */
+            margin-left: 8px;
+            font-size: 16px;
+            line-height: 32px;
+            color: #000;
+        }
+        .bysz h4{
+            margin: 8px;
+        }
+        .bysz .a,.bysz .b{
+            margin: 8px;
+            display: flex;
+        }
+        .a .sr,.a .zc{
+            font-size: 12px;
+            line-height: 24px;
+            color: #888;
+        }
+        .a .zc{
+            flex-grow: 1;
+            text-align: right;
+        }
+        .b .c,.b .d{
+            font-size: 12px;
+            line-height: 24px;
+            color: #000;
+            font-weight: bold;
+        }
+        .b .d{
+            flex-grow: 1;
+            text-align: right;
+        }
+        .bysz .kongbai{
+            margin: 8px;
+            color: #fff;
+            font-size: 1px;
+            line-height: 3px; 
+            background-color: #ddd;
+            border-radius: 20px;
+        }
+        /* 征信查询 */
+        .zxcx img{
+            width: 100%;
+            border-radius: 5px;
+        }
+        .zxcx .img{
+            margin-top: 10px;
+            margin: 8px;
+        }
+        /* 我的网点 */
+        .wdwd .biaoti,.san .sanhang{
+            display: flex;
+        }
+        .biaoti .iconfont{
+            font-size: 25px;
+            line-height: 32px;
+            flex-grow: 1;
+            color: #888;
+            text-align: right;
+        }
+        .wdwd .hezi{
+            margin: 10px;
+            margin-top: 0;
+            border: 3px solid rgb(225, 225, 225);
+            border-radius: 14px;
+            background-color: rgb(255, 234, 213);
+        }
+        .hezi .shang,.hezi .zhong{
+            display: flex;
+            margin: 8px;
+        }
+        .shang h3{
+            font-size: 14px;
+            line-height: 24px;
+            color: #000;
+        }
+        .shang .km{
+            font-size: 14px;
+            color: #888;
+            line-height: 24px;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .zhong .iconfont,.xia .iconfont{
+            font-size: 12px;
+            color: rgb(176, 176, 176);
+            line-height: 24px;
+        }
+        .zhong .dz,.xia .dh{
+            flex-grow: 1;
+            font-size: 12px;
+            color: #888;
+            line-height: 24px;
+            margin-left: 5px;
+        }
+        .hezi .xia{
+            display: flex;
+            margin: 8px;
+        }
+        .wdwd .san{
+            margin: 8px;
+        }
+        .sanhang li{
+            width: 33%;
+            font-size: 12px;
+            line-height: 24px;
+            color: rgb(37, 151, 245);
+            border-right: 1px solid #ddd;
+            text-align: center;
+        }
+        .sanhang li:nth-child(3){
+            border-right:  none;
+        }
+        /* 底部三行文字 */
+        .sanhangzi .wenzi{
+            margin: 0 8px;
+        }
+        .wenzi li{
+            display: flex;
+            border-bottom: 1px solid #ddd;
+        }
+        .wenzi li:nth-child(3){
+            border-bottom:  none;
+        }
+        .wenzi span{
+            font-size: 14px;
+            color: #000;
+            font-weight: bold;
+            line-height: 40px;
+        }
+        .wenzi .a{
+            flex-grow: 1;
+            text-align: right;
+            font-size: 12px;
+            line-height: 40px;
+        }
+        .wenzi .b{
+            font-size: 12px;
+            line-height: 40px;
+        }
+        .wenzi .banben{
+            flex-grow: 1;
+            font-size: 10px;
+            color: #888;
+            line-height: 40px;
+            text-align: right;
+        }
+
+        /* 下导航 */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        #bnav{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index:9;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            border-top: 1px solid #ccc;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center;
+        }
+        #bnav svg{
+            font-size: 30px;
+            margin: 6px auto;
+            margin-bottom: 0; 
+        }
+        #bnav p{
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="wodeheader">
+        <span class="iconfont icon-tuichu"><p>退出</p></span>
+        <div> 
+            <span class="iconfont icon-sousuo"></span>  
+            <input type="text" placeholder="请输入">  
+            <span class="iconfont icon-voice"></span>
+        </div>
+        <span class="iconfont icon-shezhi1"><p>设置</p></span>
+        <span class="iconfont icon-kefu1"><p>客服</p></span>
+        <span class="iconfont icon-xiaoxi3"><p>消息</p></span>
+    </div>
+
+    <div class="hongbeijing">
+        <div class="ljdl">
+            <span class="iconfont icon-gerenzhongxin-denglu"></span>
+            <span class="fxy">晚上好，冯*宇<p>上次登录：2022/11/22 20:52:31</p></span>
+        </div>
+        <div class="dzkh">
+            <span class="iconfont icon-shuaxin"><span class="zi">大众客户</span></span>
+            <span class="ckzxqy">查看尊享权益</span>
+            <span class="iconfont icon-youjiantou6"></span>
+        </div>
+    </div>
+
+    <div class="db">
+        <div class="kuang"> 待办</div>
+        <div class="dian">· 近7日暂无事项，点击查看更多</div>
+    </div>
+
+    <div class="sige">
+        <ul class="wodesige">
+            <li>
+                <span>1</span>
+                <p>我的账户</p>
+            </li>
+            <li>
+                <span>0</span>
+                <p>我的权益</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jifen2-copy"></use>
+                </svg>
+                <p>我的积分</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-youhuiquan2"></use>
+                </svg>
+                <p>我的奖品</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="wdzc">
+        <div class="diyihang">
+            <h4>我的资产</h4>
+            <span class="iconfont icon-biyanjing-xianxing3-0"></span>
+            <div class="time">2022/12/10 15:34:23</div>
+            <span class="iconfont icon-shuaxin2"></span>
+        </div>
+        <div class="dierhang">
+            <div class="zc">资产</div>
+            <span class="iconfont icon-youjiantou7"></span>
+        </div>
+        <div class="fuhao">******</div>
+    </div>
+
+    <div class="bysz">
+        <h4>本月收支</h4>
+        <div class="a">
+            <span class="sr">收入</span>
+            <span class="zc">支出</span>
+        </div>
+        <div class="b">
+            <span class="c">******</span>
+            <span class="d">******</span>
+        </div>
+        <div class="kongbai"> . </div>
+    </div>
+
+    <div class="zxcx">
+        <h4>征信查询</h4>
+        <div class="img"><img src="./img/wode1.jpg"></div>
+    </div>
+
+    <div class="wdwd">
+        <div class="biaoti">
+            <h4>我的网点</h4>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="hezi">
+            <div class="shang">
+                <h3>中国银行古交支行营业部</h3>
+                <div class="km">1086.0km</div>
+            </div>
+            <div class="zhong">
+                <span class="iconfont icon-weizhi"></span>
+                <div class="dz">古交市金牛西大街</div>
+            </div>
+            <div class="xia">
+                <span class="iconfont icon-dianhua1"></span>
+                <div class="dh">03515159779</div>
+            </div>
+        </div>
+        <div class="san">
+            <ul class="sanhang">
+                <li>
+                    <span>立即取号</span>
+                </li>
+                <li>
+                    <span>外币现钞预约</span>
+                </li>
+                <li>
+                    <span>卡片挂失</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sanhangzi">
+        <ul class="wenzi">
+            <li>
+                <span>隐私政策</span>
+                <span class="iconfont icon-youjiantou3 a"></span>
+            </li>
+            <li>
+                <span>我的分享</span>
+                <span class="iconfont icon-youjiantou3 a"></span>
+            </li>
+            <li>
+                <span>关于我们</span>
+                <div class="banben">当前版本7.6.0</div>
+                <span class="iconfont icon-youjiantou3 b"></span>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/index.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zuanshi"></use>
+                          </svg>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/2.html">                  
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinyongqia1"></use>
+                          </svg>
+                    <p>信用卡</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/3.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shangsheng"></use>
+                          </svg>
+                    <p>财富</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/4.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shenghuoguan"></use>
+                          </svg>
+                    <p>生活</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/my.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                          </svg>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

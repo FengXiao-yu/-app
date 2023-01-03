@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <title>728冯晓宇</title>
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/pub.css">
+    <script src="./fonts/iconfont.js"></script>
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <style>
+        /* 上导航 */
+        .tpbj .shheader{
+            display: flex;  
+            margin-top: 4px;
+            height: 35px;   
+        }
+        .shheader>span{  
+            font-size: 25px;
+            padding: 0 4px;   
+            color: #333;
+            line-height: 20px; 
+            text-align: center;  
+        } 
+        .shheader>div{   
+            flex-grow: 1;   
+            display: flex;   
+            background-color: #ddd;
+            border-radius: 18px;   
+            padding-right: 5px;  
+        }
+        .shheader .icon-sousuo,.shheader .icon-voice{
+            font-size: 20px;
+            margin: 8px;  
+            color: #666;
+            line-height: 20px; 
+        }
+        .shheader input{  
+            background-color: #ddd;   
+            border: none;    
+            flex-grow: 1;   
+            outline: none;   
+            line-height: 20px; 
+        }
+        .shheader p{
+            font-size: 12px;
+        }
+        /* 上导航固定 */
+        #dhfixed{  
+            width: 100%;  
+            left: 0;  
+            top: 0;    
+            height: 45px;
+            background-color: #fff;
+        }
+
+        /* 以图片为背景 */
+        .tpbj img{
+            width: 100%;
+        }  
+        .tpbj .shheader{
+            position: absolute;
+            left: 0;
+            top: 0;  
+            background-color: rgba(250, 251, 252, .0);
+            width: 100%;
+        } 
+
+        /* 第一行图标 */
+        .sha .shenghuoa{
+            display: flex;  
+            flex-wrap: wrap;   
+            padding: 10px; 
+            border: 3px solid rgb(241, 241, 241);
+            margin: 0 15px;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+        .shenghuoa .icon,.shenghuo .icon{  /* 第一行图标和两行图标 */
+            font-size: 25px;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .shenghuoa>li{
+            width: 22%;
+            margin: 0 5px;
+            line-height: 25px;  
+            font-size: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: rgba(65, 62, 62, .795);
+        }
+
+        /* 两行图标 */
+        .sh .shenghuo{
+            display: flex;  
+            flex-wrap: wrap;  
+            padding: 10px;
+        }
+        .shenghuo>li{
+            width: 20%;
+            line-height: 25px;  
+            font-size: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: rgba(65, 62, 62, .795);
+            margin-bottom: 10px;
+        }
+
+        /* 为您优选 */
+        .wnyx{
+            margin: 5px;
+        }
+        .wnyx h4{
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+        .wnyx .alist{
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        .alist li{    
+            width: 33%;
+            box-sizing: border-box; 
+            flex-grow: 1;
+            padding: 10px;  
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            color: #000;
+        }
+        .alist h3{
+            overflow: hidden; 
+            white-space: nowrap;  
+            text-overflow: ellipsis;
+        }
+        .alist p{
+            font-size: 12px;
+            color: #888;
+        }
+        .alist img{
+            width: 100%;
+        }
+
+        /* 话费充值 */
+        .icon {
+          width: 1em;
+          height: 1em;
+          vertical-align: -0.15em;
+          fill: currentColor;
+          overflow: hidden;
+        }
+        .hfcz{
+            margin: 8px;
+        }
+        .hfcz .zhongjian{
+            margin-top: 10px; 
+            border: 5px solid rgb(245, 244, 244);
+            border-radius: 8px;
+        }
+        .hfcz h4{
+            font-size: 18px;
+            color: #000;
+        }
+        .zhongjian .haoma{
+            display: flex;
+            margin: 8px;
+            line-height: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .haoma .hm{
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .haoma p{
+            margin-top: 5px;
+            flex-grow: 1;
+            font-size: 14px;
+            padding-left: 8px;
+            color: #888;
+        }
+        .haoma .iconfont{
+            text-align: center;
+            padding-right: 5px;
+            margin-top: 5px;
+            color: rgb(20, 123, 188);
+            font-size: 18px;
+        }
+        .iconfont p{
+            font-size: 5px;
+            text-align: center;
+            padding-right: 5px; 
+            margin-top: 0;
+        }
+        .zhongjian .qian{
+            margin-top: 10px;
+            display: flex;
+        }
+        .qian span{
+            line-height: 32px;
+            border: 1px solid #888;
+            color: #888;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+        }
+        .qian .a,.qian .c{
+            margin: 0 10px;
+            width: 30%; 
+        }
+        .qian .b{
+            flex-grow: 1;
+        }
+        .zhongjian .bottom{
+            font-size: 10px;
+            color: #888;
+            line-height: 50px;
+            padding-left: 5px;
+        }
+        .bottom a{
+            color: rgb(19, 163, 246);
+        }
+
+
+        /* 以下是生活页tab */
+        /* 第一个tab以及精选tab的上部分固定 */
+        #fixeda,#fixed{  
+            width: 100%;  
+            background-color: #fff;
+        }
+        #fixeda{
+            left: 0;
+            top: 40px;
+            height: 50px;
+        }
+        #fixed{  
+            left: 0;  
+            top: 90px;    
+            height: 40px;
+        }
+
+        /* 第一个tab以及精选tab */
+        body .tab,body .tabb{
+            margin: 5px;
+        }
+        .tab .tt,.tabb .ttb{
+            display: flex;
+            width: 100%;
+        }
+        .tabb .ttb{
+            margin-top: 5px;
+        }
+        .tab .tt{
+            margin-top: 10px;
+        }
+        .tt .swiper-slide,.ttb .swiper-slide{
+            text-align: center;
+            width: 25%;
+        }
+        .tt .swiper-slide{
+            line-height: 32px;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+            background-color: #fff;
+        }
+        .ttb .swiper-slide{
+            line-height: 28px;
+            font-size: 12px;
+            color: #888;
+            background-color: rgb(243, 243, 243);
+            border-radius: 18px;
+        }
+        .tt .swiper-slide:nth-child(4){
+            width: 30%;
+        }
+        .tt .cur{     
+            color: #000;
+            font-weight: bold;
+            font-size: 20px;
+            border-bottom: 3px solid rgb(234, 15, 15);
+            background-color: #fff;
+        }
+        .ttb .curb{     
+            color: #fff;
+            background-color: rgb(204, 21, 21);
+            border-radius: 18px;
+        }
+        .tab .tc,.tabb .tcb{
+            display: none;  
+        } 
+
+        /* 第一个tab中：本地专属、公益专区、实物贵金属、特殊资产 */
+        .bdzs,.gyzq,.swgjs,.tszc{
+            margin: 8px;
+            margin-top: 0;
+        }
+        .bdzs .listb,.gyzq .listc,.swgjs .listd,.tszc .liste{
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        .listb li,.listc li,.listd li,.liste li{    
+            width: 47%;
+            border-radius: 12px;
+            border: 1px solid #ddd;  
+            box-sizing: border-box;
+            margin: 5px;
+        }
+        .listd li{    
+            width: 100%;
+        }
+        .listb h3,.listc h3,.listd h3,.liste h3{
+            line-height: 20px;
+            font-size: 14px;
+            color: #000;
+            margin: 5px;
+        }
+        .listb p,.listc p,.listd p,.liste p{
+            font-size: 12px;
+            line-height: 20px;
+            color: #888;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        .listb img,.listc img,.listd img,.liste img{
+            width: 100%;
+            border-radius:12px 12px 0 0;
+        }
+        .swgjs h4{
+            font-size: 18px;
+            color: #000;
+            margin-left: 8px;
+            line-height: 30px;
+        }
+
+        /* 精选tab中：特色专区、中行推荐、美食生鲜、影音娱乐、
+           出行文旅、特色景点、乐享购物、便民服务、慈善捐款 */
+        .jxtszq,.jxzhtj,.jxmssx,.jxyyyl,.jxcxwl,.jxtsjd,.jxlxgw,.jxbmfw,.jxcsjk{
+            margin: 8px;
+            margin-top: 0;
+        }
+        .jxtszq h4,.jxzhtj h4,.jxmssx h4,.jxyyyl h4,.jxcxwl h4,.jxtsjd h4,.jxlxgw h4,.jxbmfw h4,.jxcsjk h4{
+            font-size: 18px;
+            color: #000;
+            margin-left: 8px;
+            line-height: 30px;
+        }
+        .jxtszq .jxa,.jxzhtj .jxb,.jxmssx .jxc,.jxyyyl .jxd,.jxcxwl .jxe,.jxtsjd .jxf,.jxlxgw .jxg,.jxbmfw .jxh,.jxcsjk .jxi{
+            display: flex;
+            flex-wrap: wrap;   
+        }
+        .jxa li,.jxb li,.jxc li,.jxd li,.jxe li,.jxg li,.jxh li,.jxi li,.jxf li{    
+            width: 47%;
+            border-radius: 12px;
+            border: 1px solid #ddd;  
+            box-sizing: border-box;
+            margin: 5px;
+        }
+        .jxf li{    
+            width:100%;
+        }
+        .jxa h3,.jxb h3,.jxc h3,.jxd h3,.jxe h3,.jxf h3,.jxg h3,.jxh h3,.jxi h3{
+            line-height: 20px;
+            font-size: 14px;
+            color: #000;
+            margin: 5px;
+        }
+        .jxa p,.jxb p,.jxc p,.jxd p,.jxe p,.jxf p,.jxg p,.jxh p,.jxi p{
+            font-size: 12px;
+            line-height: 20px;
+            color: #888;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+        .jxa img,.jxb img,.jxc img,.jxd img,.jxe img,.jxf img,.jxg img,.jxh img,.jxi img{
+            width: 100%;
+            border-radius:12px 12px 0 0;
+        }
+        .jxd li:nth-child(1),.jxh li:nth-child(1),.jxi li:nth-child(1){
+            width: 100%;
+        }
+
+        /* 下导航 */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        #bnav{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index:9;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            border-top: 1px solid #ccc;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center;
+        }
+        #bnav svg{
+            font-size: 30px;
+            margin: 6px auto;
+            margin-bottom: 0; 
+        }
+        #bnav p{
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="tpbj">  
+        <img src="./img/sh5.jpg">
+        <div id="dhfixed">
+            <div class="shheader">
+                <span class="iconfont icon-wangdian"><p>太原</p></span>
+                <div> 
+                    <span class="iconfont icon-sousuo"></span>  
+                    <input type="text" placeholder="请输入">  
+                    <span class="iconfont icon-voice"></span>
+                </div>
+                <span class="iconfont icon-xianxingduosesaomiao"><p>扫一扫</p></span>
+                <span class="iconfont icon-kefu1"><p>客服</p></span>
+            </div>
+        </div>
+    </div>
+    <div class="sha">
+        <ul class="shenghuoa">
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shenghuojiaofei4"></use>
+                </svg>
+                <p>生活缴费</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-huafeichongzhi1"></use>
+                </svg>
+                <p>话费充值</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-82"></use>
+                </svg>
+                <p>城市服务</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shengdan-wanou"></use>
+                </svg>
+                <p>福仔云游记</p>
+            </li>
+        </ul>
+    </div>
+    <div class="sh">
+        <ul class="shenghuo">
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yinhang"></use>
+                </svg>
+                <p>政务服务</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yibaodianzipingzhengbeifen"></use>
+                </svg>
+                <p>医保电子凭证</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zixingche"></use>
+                </svg>
+                <p>体育·健身</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xiaofangzi"></use>
+                </svg>
+                <p>网点排队</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yuanbao"></use>
+                </svg>
+                <p>实物贵金属</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-a-ditiezhangaotiezhanhuochezhan"></use>
+                </svg>
+                <p>铁路e卡通</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-shoucang"></use>
+                </svg>
+                <p>纪念币预约</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-quanyi"></use>
+                </svg>
+                <p>尊享权益</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xianxingduosegonggao"></use>
+                </svg>
+                <p>非税收入缴款</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-quanbu"></use>
+                </svg>
+                <p>更多</p>
+            </li>
+        </ul>
+    </div>
+    <div id="wnyxid">
+    <div class="wnyx">
+        <h4>为您优选</h4>
+        <ul class="alist"></ul>
+    </div>
+    </div>
+    <div class="hfcz">
+        <h4>话费充值</h4>
+        <div class="zhongjian">
+        <div class="haoma">
+            <span class="hm">号码</span>
+            <p> 请输入充值号码</p>
+            <span class="iconfont icon-shangwutubiao-"><p>通讯录</p></span>
+        </div>
+        <div class="qian">
+            <span class="a">30元</span>
+            <span class="b">50元</span>
+            <span class="c">100元</span>
+        </div>
+        <span class="bottom">本服务暂不提供运营商发票 详情查看<a href="#">全部说明</a></span>
+        </div>
+    </div>
+    <!-- tab -->
+    <div class="tab">
+        <div id="fixeda">
+        <div class="swiper shenghuotab tt">   
+            <div class="swiper-wrapper">
+                <div class="swiper-slide aa cur">精选</div>
+                <div class="swiper-slide aa">本地专属</div>
+                <div class="swiper-slide aa">公益专区</div>
+                <div class="swiper-slide aa">实物贵金属</div>
+                <div class="swiper-slide aa">特殊资产</div>
+            </div>
+        </div>
+        </div>
+        <div class="tc" style="display:block">
+            <div class="tabb">    <!-- tab套tab -->
+                <div id="fixed">   
+                    <div class="swiper jingxuantab ttb">   
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide bb curb">特色专区</div>
+                            <div class="swiper-slide bb">中行推荐</div>
+                            <div class="swiper-slide bb">美食生鲜</div>
+                            <div class="swiper-slide bb">影音娱乐</div>
+                            <div class="swiper-slide bb">出行文旅</div>
+                            <div class="swiper-slide bb">特色景点</div>
+                            <div class="swiper-slide bb">乐享购物</div>
+                            <div class="swiper-slide bb">便民服务</div>
+                            <div class="swiper-slide bb">慈善捐款</div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="tcb" style="display:block">
+                    <div class="jxtszq">
+                        <h4>特色专区</h4>
+                        <ul class="jxa">
+                            <li>
+                                <img src="./img/tszq1.jpg">
+                                <h3>信用卡专区</h3>
+                                <p>信用卡客户专享</p>
+                            </li>
+                            <li>
+                                <img src="./img/tszq2.jpg">
+                                <h3>微粉专区</h3>
+                                <p>粉丝福利</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>  
+                <div class="tcb">
+                    <div class="jxzhtj">
+                        <h4>中行推荐</h4>
+                        <ul class="jxb">
+                            <li>
+                                <img src="./img/zhtj1.jpg">
+                                <h3>实物贵金属</h3>
+                                <p>足不出户，金银送上门</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj2.jpg">
+                                <h3>公益中国</h3>
+                                <p>中国银行 乡村振兴帮扶平台</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj3.jpg">
+                                <h3>哈啰出行</h3>
+                                <p>优惠购卡3选1</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj4.jpg">
+                                <h3>美团</h3>
+                                <p>最高立减10元</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj5.jpg">
+                                <h3>顺丰速运</h3>
+                                <p>1元购6元</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj6.jpg">
+                                <h3>菜鸟裹裹</h3>
+                                <p>一键下单 上门取件</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj7.jpg">
+                                <h3>哔哩哔哩大会员</h3>
+                                <p>月卡仅需12元</p>
+                            </li>
+                            <li>
+                                <img src="./img/zhtj8.jpg">
+                                <h3>时空藏馆</h3>
+                                <p>数字时代的人生记忆</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxmssx">
+                        <h4>美食生鲜</h4>
+                        <ul class="jxc">
+                            <li>
+                                <img src="./img/mssx1.jpg">
+                                <h3>麦当劳</h3>
+                                <p>美食1元起</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx2.jpg">
+                                <h3>饿了么</h3>
+                                <p>最高立减12元</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx3.jpg">
+                                <h3>美团</h3>
+                                <p>最高立减10元</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx4.jpg">
+                                <h3>农夫山泉</h3>
+                                <p>农夫山泉，立减8元</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx5.jpg">
+                                <h3>叮咚买菜</h3>
+                                <p>抢7-10元满减券</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx6.jpg">
+                                <h3>蒙牛</h3>
+                                <p>抢15元券</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx7.jpg">
+                                <h3>全国商圈</h3>
+                                <p>中行信用卡全国商圈优惠日</p>
+                            </li>
+                            <li>
+                                <img src="./img/mssx8.jpg">
+                                <h3>盒马鲜生</h3>
+                                <p>最快30分钟送达</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxyyyl">
+                        <h4>影音娱乐</h4>
+                        <ul class="jxd">
+                            <li>
+                                <img src="./img/yyyl1.jpg">
+                                <h3>网易云音乐</h3>
+                                <p>黑胶月卡限时5元购</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl2.jpg">
+                                <h3>猫眼电影</h3>
+                                <p>每周四至周日，满20立减5元</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl3.jpg">
+                                <h3>喜马拉雅</h3>
+                                <p>5元购月卡，听你想听</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl4.jpg">
+                                <h3>优酷视频会员</h3>
+                                <p>月卡季卡年卡6折</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl5.jpg">
+                                <h3>腾讯视频会员</h3>
+                                <p>VIP月卡限时7折</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl6.jpg">
+                                <h3>爱奇艺视频会员</h3>
+                                <p>月卡季卡年卡7折</p>
+                            </li>
+                            <li>
+                                <img src="./img/yyyl7.jpg">
+                                <h3>淘票票</h3>
+                                <p>在线选座极速出票</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxcxwl">
+                        <h4>出行文旅</h4>
+                        <ul class="jxe">
+                            <li>
+                                <img src="./img/cxwl1.jpg">
+                                <h3>高德打车</h3>
+                                <p>高德打车，快人一步</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl2.jpg">
+                                <h3>黄山旅游尖货大促</h3>
+                                <p>惠游黄山</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl3.jpg">
+                                <h3>哈啰出行</h3>
+                                <p>优惠购卡3选1</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl4.jpg">
+                                <h3>青桔单车</h3>
+                                <p>8元抢月卡，2元抢周卡</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl5.jpg">
+                                <h3>佰付美去加油</h3>
+                                <p>智慧加油</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl6.jpg">
+                                <h3>途牛惠出行</h3>
+                                <p>火车票、机票、门票预订</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl7.jpg">
+                                <h3>壹路通</h3>
+                                <p>8元抢88元车主礼包</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl8.jpg">
+                                <h3>乐知亲子游</h3>
+                                <p>乐知亲子游，月月享优惠</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl9.jpg">
+                                <h3>泰山惠玩</h3>
+                                <p>泰山周边好去处</p>
+                            </li>
+                            <li>
+                                <img src="./img/cxwl10.jpg">
+                                <h3>方特主题乐园</h3>
+                                <p>2-88元随机立减</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxtsjd">
+                        <h4>特色景点</h4>
+                        <ul class="jxf">
+                            <li>
+                                <img src="./img/tsjd.jpg">
+                                <h3>游山西</h3>
+                                <p>GO票游山西</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxlxgw">
+                        <h4>乐享购物</h4>
+                        <ul class="jxg">
+                            <li>
+                                <img src="./img/lxgw1.jpg">
+                                <h3>唯品会</h3>
+                                <p>品牌特卖 就是超值</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw2.jpg">
+                                <h3>卡塔尔世界杯纪念品</h3>
+                                <p>立减最高80元</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw3.jpg">
+                                <h3>科大讯飞商城</h3>
+                                <p>官方直供</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw4.jpg">
+                                <h3>花加</h3>
+                                <p>抢5元券</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw5.jpg">
+                                <h3>进口商品馆</h3>
+                                <p>进口商品馆超值购</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw6.jpg">
+                                <h3>老字号国潮馆</h3>
+                                <p>享5-20元优惠</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw7.jpg">
+                                <h3>全棉时代</h3>
+                                <p>纯棉好物，静心独享5元优惠券</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw8.jpg">
+                                <h3>山姆优选</h3>
+                                <p>山姆直供，臻选品质</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw9.jpg">
+                                <h3>京东优选</h3>
+                                <p>京东优选 爆款低至9.9元</p>
+                            </li>
+                            <li>
+                                <img src="./img/lxgw10.jpg">
+                                <h3>来伊份</h3>
+                                <p>抢50元满减券</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxbmfw">
+                        <h4>便民服务</h4>
+                        <ul class="jxh">
+                            <li>
+                                <img src="./img/bmfw1.jpg">
+                                <h3>京东服务+</h3>
+                                <p>关爱父母 轻松家务</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw2.jpg">
+                                <h3>顺丰速运</h3>
+                                <p>1元购6元</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw3.jpg">
+                                <h3>菜鸟裹裹</h3>
+                                <p>一键下单 上门取件</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw5.jpg">
+                                <h3>太保视频医生</h3>
+                                <p>1元秒杀月卡</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw6.jpg">
+                                <h3>共享充电宝</h3>
+                                <p>1元购小电月卡</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw4.jpg">
+                                <h3>证件照拍摄</h3>
+                                <p>您的线上照相馆</p>
+                            </li>
+                            <li>
+                                <img src="./img/bmfw7.jpg">
+                                <h3>充值中心</h3>
+                                <p>尽享各类便捷充值服务</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tcb">
+                    <div class="jxcsjk">
+                        <h4>慈善捐款</h4>
+                        <ul class="jxi">
+                            <li>
+                                <img src="./img/csjk1.jpg">
+                                <h3>中银公益+</h3>
+                                <p>爱心捐赠 用爱点亮希望 实现公益梦想</p>
+                            </li>
+                            <li>
+                                <img src="./img/csjk2.jpg">
+                                <h3>壹基金温暖包</h3>
+                                <p>每天一元，温暖一冬</p>
+                            </li>
+                            <li>
+                                <img src="./img/csjk3.jpg">
+                                <h3>中银公益-海豚计划</h3>
+                                <p>点击支持 见证改变</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="tc">
+            <div class="bdzs">
+                <ul class="listb">
+                    <li>
+                        <img src="./img/b1.jpg">
+                        <h3>惠享EMS</h3>
+                        <p>寄快递享优惠</p>
+                    </li>
+                    <li>
+                        <img src="./img/b2.jpg">
+                        <h3>翻转福卡</h3>
+                        <p>翻福卡，领微信立减金</p>
+                    </li>
+                    <li>
+                        <img src="./img/b3.jpg">
+                        <h3>中银公益</h3>
+                        <p>慈善捐款</p>
+                    </li>
+                    <li>
+                        <img src="./img/b4.jpg">
+                        <h3>方特主题乐园</h3>
+                        <p>首单立减2-88元</p>
+                    </li>
+                    <li>
+                        <img src="./img/b5.jpg">
+                        <h3>电子社保卡</h3>
+                    </li>
+                    <li>
+                        <img src="./img/b6.jpg">
+                        <h3>车主生活</h3>
+                        <p>特惠洗车</p>
+                    </li>
+                    <li>
+                        <img src="./img/b7.jpg">
+                        <h3>智慧食堂</h3>
+                        <p>智慧云平台</p>
+                    </li>
+                    <li>
+                        <img src="./img/b8.jpg">
+                        <h3>特色山西</h3>
+                        <p>山西特色产品</p>
+                    </li>
+                    <li>
+                        <img src="./img/b9.jpg">
+                        <h3>煤基清洁能源智慧园区</h3>
+                        <p>智慧园区</p>
+                    </li>
+                    <li>
+                        <img src="./img/b10.jpg">
+                        <h3>游山西</h3>
+                        <p>GO票游山西</p>
+                    </li>
+                    <li>
+                        <img src="./img/b11.jpg">
+                        <h3>抗疫捐款</h3>
+                        <p>积小善成大爱</p>
+                    </li>
+                    <li>
+                        <img src="./img/b12.jpg">
+                        <h3>平安健康</h3>
+                        <p>医疗康养</p>
+                    </li>
+                    <li>
+                        <img src="./img/b13.jpg">
+                        <h3>临汾专享消费券</h3>
+                        <p>宠粉福利，惠聚临汾</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tc">
+            <div class="gyzq">
+                <ul class="listc"></ul>
+            </div>
+        </div>
+        <div class="tc">
+            <div class="swgjs">
+                <h4>实物贵金属</h4>
+                <ul class="listd">
+                    <li>
+                        <img src="./img/swgjs1.jpg">
+                        <h3>实物贵金属</h3>
+                        <p>足不出户，金银送上门</p>
+                    </li>
+                    <li>
+                        <img src="./img/swgjs2.jpg">
+                        <h3>好物甄选</h3>
+                        <p>实物贵金属优选活动</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="tc">
+            <div class="tszc">
+                <ul class="liste">
+                    <li>
+                        <img src="./img/tszc.jpg">
+                        <h3>特殊资产</h3>
+                        <p>特殊资产线上处置 专业便捷投资渠道</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <nav id="bnav">
+            <ul>
+                <li>
+                    <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/index.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zuanshi"></use>
+                              </svg>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/2.html">                  
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xinyongqia1"></use>
+                              </svg>
+                        <p>信用卡</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/3.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shangsheng"></use>
+                              </svg>
+                        <p>财富</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/4.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shenghuoguan"></use>
+                              </svg>
+                        <p>生活</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/my.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wode"></use>
+                              </svg>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    <!-- 为您优选AJAX -->
+    <script>
+        var url="http://rap2api.taobao.org/app/mock/308661/fengxiaoyu";
+        var xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.send();
+
+            xhr.onreadystatechange = function(){
+                 if (xhr.readyState === 4 && xhr.status === 200) {
+                 var jarr=JSON.parse(xhr.responseText);  
+                 insert(jarr);
+                }                
+            }
+
+            function insert(jarr){
+                var alist=document.querySelector(".alist");  
+                jarr.forEach((v,i) => {   
+                    var nli = document.createElement("li");   
+                nli.innerHTML= `  
+                <img src="${v.pic}">
+                <h3>${v.title}</h3>
+                <p>${v.content}</p>`   
+                alist.appendChild(nli);   
+              })
+            }
+    </script>
+
+    <!-- 以下是tab的JavaScript -->
+    <!-- swiper(2个) -->
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".shenghuotab", {
+        slidesPerView: "auto",  
+        spaceBetween: 8,  
+        });
+
+        var swiper = new Swiper(".jingxuantab", {
+        slidesPerView: "auto",  
+        spaceBetween: 8,  
+        });
+    </script>
+
+
+    <!-- 公益专区json -->
+    <script>    
+        var jarr=[{    
+            img :"./img/1-1.jpg",
+            h3:"中银公益",
+            p:"爱心捐赠 用爱点亮希望 实现公益梦想"
+        },{
+            img:"./img/2-2.jpg",
+            h3:"公益中国",
+            p:"中国银行 乡村振兴帮扶平台"
+        },{
+            img:"./img/3-3.jpg",
+            h3:"重点帮扶县优品集锦",
+            p:"公益中国专区重点帮扶县优品集锦"
+        }];
+        
+        var jlist=document.querySelector(".listc");
+
+        jarr.forEach((v,i)=>{    
+            var nli=document.createElement("li");    
+            nli.innerHTML=`<div class="gyzq">
+            <img src="${v.img}">
+            <h3>${v.h3}</h3>
+            <p>${v.p}</p>
+            </div>`;   
+           jlist.appendChild(nli);   
+        })
+    </script>
+    
+
+
+    <!-- 滚动固定  -->
+    <script>
+        window.onscroll=function(){   
+            var st=document.documentElement.scrollTop;   
+            console.log(st);
+            if(st>wnyxid.offsetHeight){     
+                fixed.style.position="fixed";  
+                fixeda.style.position="fixed";
+            } 
+            else{   
+                fixed.style.position="static";  
+                fixeda.style.position="static";
+            }
+
+            var dh=document.documentElement.scrollTop;   
+            console.log(dh);
+            if(dh>dhfixed.offsetHeight){     
+                dhfixed.style.position="fixed";  
+            } 
+            else{   
+                dhfixed.style.position="static";  
+            }
+        }
+    </script>
+
+
+<!-- 找tab -->
+<script>
+    //用dom来找：
+    var tabb=document.getElementsByClassName("tabb")[0];
+    var ttb=tabb.querySelector(".ttb");
+    var bb=document.getElementsByClassName("bb");
+    var tcb=tabb.getElementsByClassName("tcb");
+
+    var tab=document.getElementsByClassName("tab")[0];
+    var tt=tab.querySelector(".tt");
+    var aa=document.getElementsByClassName("aa");
+    var tc=tab.getElementsByClassName("tc");
+
+    for(let i=0;i<bb.length;i++){
+        bb[i].index=i;   
+        bb[i].onmouseover=function(){    
+            for(let j=0;j<bb.length;j++){
+                bb[j].classList.remove("curb");  
+                tcb[j].style.display="none";  
+            }
+            this.classList.add("curb");
+            tcb[this.index].style.display="block";   
+        }
+    } 
+
+    for(let i=0;i<aa.length;i++){
+        aa[i].index=i;   
+        aa[i].onmouseover=function(){    
+            for(let j=0;j<aa.length;j++){
+                aa[j].classList.remove("cur");  
+                tc[j].style.display="none";  
+            }
+            this.classList.add("cur");
+            tc[this.index].style.display="block";   
+        }
+    } 
+    </script>
+</body>
+</html>

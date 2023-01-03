@@ -1,0 +1,33 @@
+/* 电脑端和手机端通用的全局CSS */
+h1,h2,h3,h4,h5,h6,body,ul,p,form,dl,dd,dt{ /* 默认和周围有距离的元素要去掉padding，margin */
+    padding: 0;
+    margin: 0;
+}
+ul{/* 去掉列表前面的点 */
+    list-style: none;
+}
+a{
+    text-decoration: none;  /* 去掉超链接的下划线 */
+    color: #000;   /* 超链接默认是有颜色的 */
+}
+a:visited{  /* 伪类：表示访问过的超链接 */
+    color: #000; /* 访问过的超链接默认是紫色，把他变成黑色 */
+}
+img{
+    border: none;/* 去边框 */
+    display: block;
+}
+
+/* 手机端特有的全局CSS */
+body{ /* 对手机整体的宽度进行规划 */
+    min-width: 320px; /* 两个流行值：320是iphone4的宽度，480是现当下宽度 */
+    max-width: 1200px;  /* 推荐不给最大宽度，给了就要让盒子居中（整个网页居中） */
+                        /* 给了最大宽度，如果显示器的宽度比网页的最大宽度还大的话，两边就会有空白 */
+    margin: 0 auto;  /* 盒子居中，和max-width一起用，不写max-width就不用写margin */
+    overflow-x: hidden;/* 横向溢出，如果内容规划不合理，内容会产生溢出，溢出后就不是全屏宽度了，浏览器就可以左右滑动，所以要设置溢出隐藏*/
+}
+/* rem */
+html{
+    font-size: 5.4vw;
+}
+/* 第二种实现rem的方法：media query */

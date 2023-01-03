@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <title>728冯晓宇</title>
+    <link rel="stylesheet" href="./css/pub.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <script src="./fonts/iconfont.js"></script>
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <style>
+        /* 上导航 */
+        .header{
+            display: flex;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .header .zuo{
+            flex-grow: 1;   
+            display: flex;   
+            background-color: rgb(237, 237, 237);
+            border-radius: 20px;   
+            margin: 0 5px;
+        }
+        .zuo .icon-sousuo{
+            font-size: 20px;
+            margin: 8px;  
+            color: #666;
+            line-height: 15px;
+        }
+        .zuo input{
+            background-color: rgb(237, 237, 237);   
+            border: none;    
+            flex-grow: 1;   
+            outline: none;   
+            line-height: 15px; 
+        }
+        .zuo .icon-voice{
+            font-size: 20px;
+            margin: 8px;  
+            color: #666;
+            line-height: 15px;
+        }
+        .header .icon-kefu2{
+            font-size: 20px;
+            padding: 0 4px;   
+            color: #333;
+            line-height: 15px;
+        }
+        .header p{
+            font-size: 12px;
+        }
+        /* 上导航固定 */
+        #cffixed{  
+            width: 100%;  
+            left: 0;  
+            top: 0;    
+            height: 45px;
+            background-color: #fff;
+        }
+
+        /* 红色框 */
+        .dlck{
+            margin: 10px;
+            color: #fff;
+            background-color: rgb(207, 14, 14);
+            border-radius: 12px;
+        }
+        .dlck .wenzia{ 
+            font-size: 12px;
+            margin-left: 8px;
+        }
+        .dlck .zhongjian{
+            display: flex;
+            margin-left: 8px;
+            margin-top: 10px;
+        }
+        .zhongjian .wenzib{
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+        .zhongjian .icon-youjiantou4{
+            margin-top: 2px;
+            margin-left: 10px;
+            font-size: 18px;
+            flex-grow: 1;
+            line-height: 50px;
+        }
+        .dlck .you{
+            line-height: 25px;
+            display: flex;
+            margin-left: 280px;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .you .icon-tingzhenqi{
+            font-size: 14px;
+        }
+        .you .zczd{
+            font-size: 10px;
+            flex-grow: 1;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .you .icon-youjiantou4{
+            font-size: 14px;
+        }
+
+        /* 两行图标 */
+        .cf .caifutubiao{
+            display: flex;          
+            flex-wrap: wrap;   
+            padding: 10px;
+        }
+        .caifutubiao .icon,.rmdvtubiao .icon{  /* 两行图标，热门大V */
+            font-size: 25px;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .caifutubiao>li{
+            width: 20%;
+            line-height: 25px;  
+            font-size: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: rgba(65, 62, 62, .795);
+            margin-bottom: 10px;
+        }
+
+        /* 滚动文字 */
+        .wenzi{
+            height: 33px; 
+            line-height: 33px;
+            overflow: hidden;           
+            font-size: 12px;
+            color: #036;
+            margin: 5px 10px;
+            margin-top: 0;
+        }
+        .wenzi .swiper-slide{
+            display: flex;
+        }
+        .swiper-slide .zuo{
+            color: #000;
+        }
+        .swiper-slide .you{
+            flex-grow: 1;
+            text-align: right;
+            color: rgb(3, 179, 73);
+        }
+        .swiper-slide span{
+            font-size: 10px;
+        }
+
+        /* 单张图片 */
+        .img{
+            margin: 0 10px;
+        }
+        .img img{
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* 六段文字部分 */
+        .grylj,.yzth,.lhss,.wjtz,.jzjq,.bxbz{
+            margin: 10px;
+        }
+        .grylj .top,.yzth .top,.lhss .top,.wjtz .top,.jzjq .top,.bxbz .top{
+            display: flex;
+        }
+        .top .txt{
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .top .iconfont{
+            font-size: 25px;
+            flex-grow: 1;
+            color: #888;
+            text-align: right;
+        }
+        .grylj .sgyza,.yzth .shuzia,.lhss .fua,.wjtz .zhenga,.jzjq .jzjqa,.bxbz .bxbza,
+        .grylj .sgyzb,.yzth .shuzib,.lhss .fub,.wjtz .zhengb,.jzjq .jzjqb,.bxbz .bxbzb,
+        .grylj .sgyzc{
+            display: flex;
+            margin-top: 10px;
+        }
+        .sgyza .a,.shuzia .a,.fua .a,.zhenga .a,.jzjqa .a,.bxbza .a,
+        .sgyzb .a,.shuzib .a,.fub .a,.zhengb .a,.jzjqb .a,.bxbzb .a,
+        .sgyzc .a{
+            width: 35%;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 28px;
+        }
+        .sgyza .a,.shuzia .a,.zhenga .a,.jzjqa .a,.bxbza .a,
+        .sgyzb .a,.zhengb .a,.jzjqb .a,.bxbzb .a,
+        .sgyzc .a{
+            color: rgb(208, 11, 11);
+        }
+        .sgyza p,.shuzia p,.fua p,.zhenga p,.jzjqa p,.bxbza p,
+        .sgyzb p,.shuzib p,.fub p,.zhengb p,.jzjqb p,.bxbzb p,
+        .sgyzc p{
+            font-size: 10px;
+            color: #888;
+            font-weight: normal;
+        }
+        .sgyza .b,.shuzia .b,.fua .b,.zhenga .b,.jzjqa .b,.bxbza .b,
+        .sgyzb .b,.shuzib .b,.fub .b,.zhengb .b,.jzjqb .b,.bxbzb .b,
+        .sgyzc .b{
+            flex-grow: 1;
+            font-size: 14px;
+            line-height: 25px;
+            color: #000;
+            font-weight: bold;
+        }
+        .b p{   
+            font-size: 10px;
+            color: #888;
+            font-weight: normal;
+            overflow: hidden; 
+            white-space: nowrap;  
+            text-overflow: ellipsis;
+        }
+        .b .bk{
+            border: 1px solid #000;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        /* 不同效果 */
+        .shuzib .a,.fua .a,.fub .a{
+            
+            color: rgb(39, 171, 87);
+        }
+        .zhenga .a{
+            font-size: 16px;
+        }
+
+        /* 投资专区 */
+        .cftouzizhuanqu,.cfrmhd,.zx,.rmdv{  /* 投资专区，热门活动，资讯，热门大V */
+            margin: 10px;
+        }
+        .cftouzizhuanqu h4{
+            font-size: 16px;
+            color: #000;
+            line-height: 30px;
+        }
+        .cftouzizhuanqu .cftzzq{
+            margin-top: 5px;
+            position: relative;
+        }
+        .cftzzq img,.cfrmhd img{
+            width: 100%;
+            border-radius: 10px; 
+        }
+        .cftzzq h3,.cftzzq span{
+            position: absolute;
+            left: 30%;
+            line-height: 32px;
+        }
+        .cftzzq h3{
+            top: 20%;  
+            font-size: 14px;
+            color: #000;
+            font-weight: normal;
+        }
+        .cftzzq span{
+            bottom: 20%;    
+            font-size: 12px;
+            color: rgb(170, 127, 218);
+        }
+
+        /* 热门活动 */
+        .cfrmhd .title,.rmdv .rmdvtop{  /* 热门活动，热门大V */
+            display: flex;
+        }
+        .title h4{
+            font-size: 16px;
+            color: #000;
+        }
+        .title .iconfont,.top .iconfont,.rmdvtop .iconfont{ /* 热门活动，资讯，热门大V */
+            font-size: 25px;
+            flex-grow: 1;
+            color: #888;
+            text-align: right;
+        }
+        .cfrmhd .tupian{
+            padding-top: 10px;
+            display: flex;
+        }
+        .tupian .zuo{
+            width: 50%;
+            padding-right: 3px; 
+        }
+        .tupian .you{
+            width: 50%;
+            padding-left: 3px; 
+        }
+        .you .shang{
+            margin-bottom: 10px; 
+            flex-grow: 1;
+        }
+
+        /* 资讯 */
+        .zx .jlist{
+            margin-top: 10px;
+        }
+        .jlist li{   
+            display: flex;     
+            margin: 10px 0;
+            padding-bottom: 4px;
+        }
+        .jlist img{
+            width: 90px;
+            border-radius: 8px;
+        }
+        .jlist .text{
+            margin-left: 8px;  
+            display: flex;   
+            flex-wrap: wrap;   
+            flex-grow: 1;
+        }
+        .text h3{
+            font-size: 14px;
+            line-height: 20px;
+            width: 100%;   
+            letter-spacing: 2px;
+            margin-left: 0;
+        }
+        .text a{
+            color: #030;
+        }
+        .text span{
+            font-size: 12px;
+            line-height: 20px; 
+            color: #999;
+        }
+        .text .xiaozi{
+            margin-left: 5px;
+        }
+        .text .time{
+            margin-right: 8px;
+            flex-grow: 1;  
+            text-align: right;   
+        }
+        .zx .top{
+            display: flex;
+        }
+        .top .txt{
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        /* 热门大V */
+        .rmdvtop h4{
+            font-size: 16px;
+            color: #000;
+            margin-top: 10px;
+            margin-bottom: 3px;
+        }
+        .rmdv .rmdvtubiao{
+            display: flex;  
+            padding-top: 5px;
+        }
+        .rmdvtubiao .icon{
+            margin: 10px 15px;
+        }
+        .rmdvtubiao>li{
+            width: 30%;
+            line-height: 25px;  
+            text-align: center;
+            background-color: #fff;
+            border: 3px solid rgb(244, 244, 244);
+            border-radius: 14px;
+            margin: 5px;
+        }
+        .rmdvtubiao .rmdvtitle{
+            font-size: 12px;
+            color: rgb(125, 125, 125);
+            margin: 10px 15px;
+            margin-top: 0;
+            overflow: hidden; 
+            white-space: nowrap;  
+            text-overflow: ellipsis;
+        }
+        .rmdvtubiao .gz{
+            color: rgb(239, 12, 12);
+            font-weight: none;
+            font-size: 12px;
+            line-height: 20px;
+            border: 1px solid rgb(238, 10, 10);
+            border-radius: 16px; 
+            margin: 10px 20px;
+        }
+
+        /* 下导航 */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        #bnav{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index:9;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            border-top: 1px solid #ccc;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center;
+        }
+        #bnav svg{
+            font-size: 30px;
+            margin: 6px auto;
+            margin-bottom: 0; 
+        }
+        #bnav p{
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="cffixed">
+        <div class="header">
+            <div class="zuo"> 
+                <span class="iconfont icon-sousuo"></span>  
+                <input type="text" placeholder="请输入">  
+                <span class="iconfont icon-voice"></span>
+            </div>
+            <span class="iconfont icon-kefu2"><p>客服</p></span>
+        </div>
+    </div>
+
+    <div class="dlck">
+        <span class="wenzia">总资产(折算人民币)</span>
+        <div class="zhongjian">
+            <span class="wenzib">登录查看</span>
+            <span class="iconfont icon-youjiantou4"></span>
+        </div>
+        <div class="you">
+            <span class="iconfont icon-tingzhenqi"></span>
+            <span class="zczd">资产诊断</span>
+            <span class="iconfont icon-youjiantou4"></span>
+        </div>
+    </div>
+
+    <div class="cf">
+        <ul class="caifutubiao">
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-licai11"></use>
+                </svg>
+                <p>理财</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xianxingduoselicai"></use>
+                </svg>
+                <p>存款管理</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jijin"></use>
+                </svg>
+                <p>基金</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-chongzhi"></use>
+                </svg>
+                <p>结汇购汇</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-custom700"></use>
+                </svg>
+                <p>结构性存款</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-caifu"></use>
+                </svg>
+                <p>余额基金</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-cunkuan"></use>
+                </svg>
+                <p>宝宝存钱罐</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-duanqilicai"></use>
+                </svg>
+                <p>中银慧投</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yuanbao"></use>
+                </svg>
+                <p>账户贵金属</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-quanbu"></use>
+                </svg>
+                <p>更多</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="swiper wenzi">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="zuo">中小100 7561.32↓</div>  
+                <div class="you">-0.81% -61.96 </div>
+                <span class="iconfont icon-xiangyoujiantou"></span>
+            </div>
+            <div class="swiper-slide">
+                <div class="zuo">深圳成指 7561.32↓</div>  
+                <div class="you">-0.81% -61.96 </div>  
+                <span class="iconfont icon-xiangyoujiantou"></span>     
+            </div>
+            <div class="swiper-slide">
+                <div class="zuo">上证指数 7561.32↓</div>  
+                <div class="you">-0.81% -61.96 </div>  
+                <span class="iconfont icon-xiangyoujiantou"></span>      
+            </div>
+            <div class="swiper-slide">
+                <div class="zuo">上证50 7561.32↓</div>  
+                <div class="you">-0.81% -61.96 </div>
+                <span class="iconfont icon-xiangyoujiantou"></span>
+            </div>
+            <div class="swiper-slide">
+                <div class="zuo">沪深300 7561.32↓</div>  
+                <div class="you">-0.81% -61.96 </div>
+                <span class="iconfont icon-xiangyoujiantou"></span>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="img">
+        <img src="./img/cf2.jpg">
+    </div>
+
+    <div class="grylj">
+        <div class="top">
+            <span class="txt">个人养老金专属</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="sgyza">
+            <span class="a">申购一折<p>中等风险</p></span>
+            <div class="b">中银安康养老一年Y<p><span class="bk">基金</span> 个人养老金基金</p></div>
+        </div>
+        <div class="sgyzb">
+            <span class="a">申购一折<p>中等风险</p></span>
+            <div class="b">易基汇智养老一年Y<p><span class="bk">基金</span> 个人养老金基金</p></div>
+        </div>
+        <div class="sgyzc">
+            <span class="a">申购一折<p>中等风险</p></span>
+            <div class="b">嘉实养老2050Y<p><span class="bk">基金</span> 个人养老金基金</p></div>
+        </div>
+    </div>
+
+    <div class="yzth">
+        <div class="top">
+            <span class="txt">一折特惠</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="shuzia">
+            <span class="a">1.13%<p>近一年涨幅</p></span>
+            <div class="b">富国天利增长债券<p><span class="bk">基金</span> 纯债打底 长期配置</p></div>
+        </div>
+        <div class="shuzib">
+            <span class="a">-4.44%<p>近一年涨幅</p></span>
+            <div class="b">招商瑞文混合A<p><span class="bk">基金</span> 固收加精品 严控回撤</p></div>
+        </div>
+    </div>
+
+    <div class="lhss">
+        <div class="top">
+            <span class="txt">灵活申赎</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="fua">
+            <span class="a">-0.19%<p>近3月年化</p></span>
+            <div class="b">申赎灵活 运作稳健<p><span class="bk">理财</span> 中银理财 欣享天添</p></div>
+        </div>
+        <div class="fub">
+            <span class="a">-0.55%<p>近3月年化</p></span>
+            <div class="b">纯债投资 灵活理财<p><span class="bk">理财</span> 光大理财阳光金日添利1号</p></div>
+        </div>
+    </div>
+
+    <div class="wjtz">
+        <div class="top">
+            <span class="txt">稳健投资</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="zhenga">
+            <span class="a">2.40%至3.60%<p>业绩比较基准</p></span>
+            <div class="b">稳健投资 每周开放<p><span class="bk">理财</span> （周四有约）中银理财</p></div>
+        </div>
+        <div class="zhengb">
+            <span class="a">1.0679<p>单位净值</p></span>
+            <div class="b">八年见证 载誉相伴<p><span class="bk">代销资管</span> 光大阳光稳债一年持有A</p></div>
+        </div>
+    </div>
+
+    <div class="jzjq">
+        <div class="top">
+            <span class="txt">价值进取</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="jzjqa">
+            <span class="a">长跑健将<p>穿越牛熊</p></span>
+            <div class="b">聚焦新经济，布局新时代<p><span class="bk">基金</span> 易方达新经济</p></div>
+        </div>
+        <div class="jzjqb">
+            <span class="a">牛股捕手<p>积极成长</p></span>
+            <div class="b">五星基金，挖掘高景气成长股<p><span class="bk">基金</span> 华夏行业景气</p></div>
+        </div>
+    </div>
+
+    <div class="bxbz">
+        <div class="top">
+            <span class="txt">保险保障</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="bxbza">
+            <span class="a">5000.00<p>起购金额</p></span>
+            <div class="b">中银三星中银尊享人生终身寿险<p><span class="bk">保险</span> 寿险 / 热销</p></div>
+        </div>
+        <div class="bxbzb">
+            <span class="a">1.00万<p>起购金额</p></span>
+            <div class="b">华夏南山松(鑫享版)终身寿险<p><span class="bk">保险</span> 寿险 / 新品</p></div>
+        </div>
+    </div>
+
+    <div class="cftouzizhuanqu">
+        <h4>投资专区</h4>
+        <div class="cftzzq">
+            <img src="./img/cf1.jpg">
+            <h3>您的专享理财</h3>
+            <span>资产配置，伴您开启理财新生活</span>
+        </div>
+    </div>
+
+    <div class="cfrmhd">
+        <div class="title">
+            <h4>热门活动</h4>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="tupian">
+            <div class="zuo">
+                <img src="./img/cf3.jpg">
+            </div>
+            <div class="you">
+                <div class="shang">
+                    <img src="./img/cf4.jpg">
+                </div>
+                <div class="xia">
+                    <img src="./img/cf5.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="zx">
+        <div class="top">
+            <span class="txt">资讯</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <ul class="jlist"></ul> 
+    </div>
+
+    <div class="rmdv">
+        <div class="rmdvtop">
+            <h4>热门大V</h4>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <ul class="rmdvtubiao">
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-diqiu1"></use>
+                </svg>
+                <p class="rmdvtitle">中国银行投资策略研究中心</p>
+                <p class="gz">+关注</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhongguoyinhang2"></use>
+                </svg>
+                <p class="rmdvtitle">中银基金</p>
+                <p class="gz">+关注</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-zhongguoyinhang"></use>
+                </svg>
+                <p class="rmdvtitle">中银证券</p>
+                <p class="gz">+关注</p>
+            </li>
+        </ul>
+    </div>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/index.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zuanshi"></use>
+                          </svg>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/2.html">                  
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinyongqia1"></use>
+                          </svg>
+                    <p>信用卡</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/3.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shangsheng"></use>
+                          </svg>
+                    <p>财富</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/4.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shenghuoguan"></use>
+                          </svg>
+                    <p>生活</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/my.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                          </svg>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    
+    <!-- 滚动文字的swiper -->
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".wenzi", {
+        direction: "vertical",   
+        autoplay: {  
+            delay: 2500,  
+            disableOnInteraction: false, 
+        }
+        });
+    </script>
+
+    <!-- 资讯json -->
+    <script>    
+        var jarr=[{    
+            link:"http://ltaaa.com",
+            title:"【最全】个人养老金政策揭秘",
+            xiaozi:"嘉实基金·7.0W+阅读·278赞",
+            time:"12-09",
+            img:"./img/1.jpg"
+        },{
+            link:"http://ltaaa.com",
+            title:"【博时基金农业大讲堂第5期】鸡周期有多久？",
+            xiaozi:"博时基金·1527阅读·11赞",
+            time:"12-09",
+            img:"./img/2.jpg"
+        },{
+            link:"http://ltaaa.com",
+            title:"【博时基金农业大讲堂第5期】鸡周期是什么？",
+            xiaozi:"博时基金·1878阅读·8赞",
+            time:"12-09",
+            img:"./img/3.jpg",
+        }];
+        
+        var jlist=document.querySelector(".jlist");
+
+        jarr.forEach((v,i)=>{    
+            var nli=document.createElement("li");    
+            nli.innerHTML=`<div class="text">
+            <h3><a href="${v.link}">${v.title}</a></h3>
+            <span class="xiaozi">${v.xiaozi}</span>
+            <span class="time">${v.time}</span>
+            </div>
+            <img src="${v.img}">`;   
+           jlist.appendChild(nli);   
+        })
+    </script>
+
+    <!-- 上导航固定 -->
+    <script>
+        window.onscroll=function(){   
+           var cf=document.documentElement.scrollTop;   
+           console.log(cf);
+           if(cf>cffixed.offsetHeight){      
+              cffixed.style.position="fixed";  
+           }
+           else{   
+              cffixed.style.position="static";  
+           }
+        }
+    </script>
+</body>
+</html>

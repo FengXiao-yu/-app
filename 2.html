@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <title>728冯晓宇</title>
+    <link rel="stylesheet" href="./css/pub.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <script src="./fonts/iconfont.js"></script>
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <style>
+        /* 上导航 */
+        .header{
+            display: flex;
+            margin-top: 8px;
+            width: 100%;
+        }
+        .header .zuo{
+            flex-grow: 1;   
+            display: flex;   
+            background-color: rgb(237, 237, 237);
+            border-radius: 20px;   
+            margin: 0 5px;
+        }
+        .zuo .icon-sousuo{
+            font-size: 20px;
+            margin: 8px;  
+            color: #666;
+            line-height: 15px;
+        }
+        .zuo input{
+            background-color: rgb(237, 237, 237);   
+            border: none;    
+            flex-grow: 1;   
+            outline: none;   
+            line-height: 15px; 
+        }
+        .zuo .icon-voice{
+            font-size: 20px;
+            margin: 8px;  
+            color: #666;
+            line-height: 15px;
+        }
+        .header .icon-kefu2{
+            font-size: 20px;
+            padding: 0 4px;   
+            color: #333;
+            line-height: 15px;
+        }
+        .header p{
+            font-size: 12px;
+        }
+        /* 上导航固定 */
+        #xykfixed{  
+            width: 100%;  
+            left: 0;  
+            top: 0;    
+            height: 45px;
+            background-color: #fff;
+        }
+
+        /* 登录查看更多 */
+        .dl{
+            margin: 10px;
+            background-color: #fff;
+            border: 3px solid rgb(241, 241, 241);
+            border-radius: 12px; 
+        }
+        .dl .shang{
+            text-align: center;
+            padding-top: 8px;
+        }
+        .shang span{
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            line-height: 32px;
+            padding-top: 8px;
+        }
+        .shang p{
+            background-color: rgb(248, 19, 19);
+            color: #fff;
+            font-weight: none;
+            font-size: 14px;
+            line-height: 27px;
+            border-radius: 16px; 
+            margin-bottom: 10px;
+            margin-left: 150px;
+            margin-right: 150px; 
+        }
+        .dl .xia{
+            font-size: 12px;
+            color: rgb(86, 50, 20);    
+            line-height: 25px;
+            text-align: left;
+            background-color: rgb(226, 209, 179); 
+            padding: 10px;
+            border-radius: 0 0 12px 12px;  
+        }
+
+        /* 两行图标 */
+        .wd .wode{
+            display: flex;  
+            flex-wrap: wrap;   
+            padding: 10px;
+        }
+        .wode .icon{
+            font-size: 25px;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .wode>li{
+            width: 20%;
+            line-height: 25px;  
+            font-size: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: rgba(65, 62, 62, 0.795);
+            margin-bottom: 10px;
+        }
+
+        /* 幻灯片 */
+        .xykhdp{
+            padding: 10px;
+        }
+        .xykhdp img{
+            width: 100%;
+        }
+
+        /* 热卡精彩 */
+        body .rkjc{
+            margin: 10px;
+            margin-top: 5px;
+        }
+        .rkjc .topzi,.thzsb .shouhang,.tszq .timu{    /* 热卡精彩，特惠在身边，特色专区 */
+            display: flex;
+        }
+        .topzi .dawenzi,.shouhang .dazi,.timu .timuwenzi{
+            font-size: 18px;
+            margin: 8px;
+            color: #000;
+            font-weight: bold;
+        }
+        .topzi .iconfont,.shouhang .iconfont,.timu .iconfont{
+            font-size: 25px;
+            flex-grow: 1;
+            color: #888;
+            text-align: right;
+        }
+        .tupian .tuwen,.xia .stxw,.xiatu .xt{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tuwen li,.stxw li,.xt li{
+            margin: 5px;
+            position: relative; 
+        }
+        .tuwen li{
+            width: 30%;
+        }
+        .tuwen li:nth-child(1){
+            width: 63%;
+        }
+        .tuwen img,.stxw img,.xt img{
+            width: 100%;
+            border-radius: 10px; 
+        }
+        .tuwen h3,.tuwen span,.stxw h3,.stxw span,.xt h3,.xt span{
+            position: absolute;
+            left: 10px;
+            line-height: 32px;
+        }
+        .tuwen h3{
+            top: 10px;  
+            font-size: 14px;
+            color: #fff;
+        }
+        .tuwen span{
+            top: 30px;   
+            font-size: 10px;
+            color: #000;
+        }
+
+        /* 特惠在身边 */
+        body .thzsb,body .tszq{
+            margin: 10px;
+        }
+        .stxw li,.xt li{   /* 特惠在身边，特色专区 */
+            width: 47%;
+        }
+        .stxw h3{
+            top: 10px;  
+            font-size: 16px;
+            color: #fff;
+        }
+        .stxw span{
+            top: 30px;   
+            font-size: 12px;
+            color: #000;
+        }
+
+        /* 特色专区 */
+        .xt h3,.xt span{
+            color: rgb(241, 240, 240);
+        }
+        .xt h3{
+            top: 10px;  
+            font-size: 16px;
+        }
+        .xt span{
+            top: 30px;   
+            font-size: 12px;
+        }
+
+        /* 下导航 */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        #bnav{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            z-index:9;
+        }
+        body{
+            margin-bottom: 100px;
+        }
+        #bnav ul{
+            border-top: 1px solid #ccc;
+            display: flex;
+        }
+        #bnav li{
+            width: 20%; 
+            text-align: center;
+        }
+        #bnav svg{
+            font-size: 30px;
+            margin: 6px auto;
+            margin-bottom: 0; 
+        }
+        #bnav p{
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="xykfixed">
+        <div class="header">
+            <div class="zuo"> 
+                <span class="iconfont icon-sousuo"></span>  
+                <input type="text" placeholder="请输入">  
+                <span class="iconfont icon-voice"></span>
+            </div>
+            <span class="iconfont icon-kefu2"><p>客服</p></span>
+        </div>
+    </div>
+
+    <div class="dl">
+        <div class="shang">
+            <span>登录查看更多信息</span>
+            <p>去登录</p>
+        </div>
+        <div class="xia">查看更多信用卡，申请享优惠 ></div>
+    </div>
+
+    <div class="wd">
+        <ul class="wode">
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xinyongkahuankuan"></use>
+                </svg>
+                <p>余额转出</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yue"></use>
+                </svg>
+                <p>额度管理</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jifen"></use>
+                </svg>
+                <p>积分</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yinhangkazhuanzhang1"></use>
+                </svg>
+                <p>立即还款</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-banka"></use>
+                </svg>
+                <p>信用卡申请</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-kabao2"></use>
+                </svg>
+                <p>一键绑卡</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-fenqifukuan"></use>
+                </svg>
+                <p>数字信用卡</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-yuechaxun"></use>
+                </svg>
+                <p>账单分期</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-piaowu"></use>
+                </svg>
+                <p>现金分期</p>
+            </li>
+            <li>
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-quanbu"></use>
+                </svg>
+                <p>更多</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="swiper xykhdp">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./img/xyk1.jpg"></div>
+            <div class="swiper-slide"><img src="./img/xyk2.jpg"></div>
+            <div class="swiper-slide"><img src="./img/xyk3.jpg"></div>
+            <div class="swiper-slide"><img src="./img/xyk4.jpg"></div>
+            <div class="swiper-slide"><img src="./img/xyk5.jpg"></div>
+        </div>
+        <div class="swiper-pagination"></div>   <!-- 图片下面的点 -->
+    </div>
+
+    <div class="rkjc">
+        <div class="topzi">
+            <span class="dawenzi">热卡精彩</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="tupian">
+            <ul class="tuwen">
+                <li>
+                    <img src="./img/rkjc1.jpg">
+                    <h3>精英生活</h3>
+                    <span>GO ></span>
+                </li>
+                <li>
+                    <img src="./img/rkjc2.jpg">
+                    <h3>车主出行</h3>
+                    <span>GO ></span>
+                </li>
+                <li>
+                    <img src="./img/rkjc3.jpg">
+                    <h3>高端至尊</h3>
+                    <span>GO ></span>
+                </li>
+                <li>
+                    <img src="./img/rkjc4.jpg">
+                    <h3>运动健身</h3>
+                    <span>GO ></span>
+                </li>
+                <li>
+                    <img src="./img/rkjc5.jpg">
+                    <h3>跨境海淘</h3>
+                    <span>GO ></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="thzsb">
+        <div class="shouhang">
+            <span class="dazi">特惠在身边</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="xia">
+            <ul class="stxw">
+                <li>
+                    <img src="./img/thzsb1.jpg">
+                    <h3>商圈乐享</h3>
+                    <span>美食购物特惠</span>
+                </li>
+                <li>
+                    <img src="./img/thzsb2.jpg">
+                    <h3>积分365</h3>
+                    <span>小积分大惊喜</span>
+                </li>
+                <li>
+                    <img src="./img/thzsb3.jpg">
+                    <h3>跨境优享</h3>
+                    <span>跨境返现10%</span>
+                </li>
+                <li>
+                    <img src="./img/thzsb4.jpg">
+                    <h3>绑卡畅享</h3>
+                    <span>首绑立减</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tszq">
+        <div class="timu">
+            <span class="timuwenzi">特色专区</span>
+            <span class="iconfont icon-youjiantou3"></span>
+        </div>
+        <div class="xiatu">
+            <ul class="xt">
+                <li>
+                    <img src="./img/xyktszq1.jpg">
+                    <h3>活动专区</h3>
+                    <span>精彩不断 优惠不断</span>
+                </li>
+                <li>
+                    <img src="./img/xyktszq2.jpg">
+                    <h3>教育专区</h3>
+                    <span>收获更多好礼</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <nav id="bnav">
+        <ul>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/index.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-zuanshi"></use>
+                          </svg>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/2.html">                  
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinyongqia1"></use>
+                          </svg>
+                    <p>信用卡</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/3.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shangsheng"></use>
+                          </svg>
+                    <p>财富</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/4.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shenghuoguan"></use>
+                          </svg>
+                    <p>生活</p>
+                </a>
+            </li>
+            <li>
+                <a href="file:///D:/Download/gaowang/20001010728%E5%86%AF%E6%99%93%E5%AE%87/20001010728-%E5%86%AF%E6%99%93%E5%AE%87/my.html">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wode"></use>
+                          </svg>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+
+
+
+    <!-- 幻灯片swiper -->
+    <script src="./js/swiper/swiper-bundle.min.js">  </script>
+    <script>
+        var swiper = new Swiper(".xykhdp", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        }
+      });
+    </script>
+
+    <!-- 上导航固定 -->
+    <script>
+        window.onscroll=function(){   
+           var xyk=document.documentElement.scrollTop;   
+           console.log(xyk);
+           if(xyk>xykfixed.offsetHeight){      
+              xykfixed.style.position="fixed"; 
+           }
+           else{   
+            xykfixed.style.position="static";  
+           }
+        }
+    </script>
+</body>
+</html>

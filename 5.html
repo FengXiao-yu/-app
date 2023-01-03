@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <title>728冯晓宇</title>
+    <script src="./fonts/iconfont.js"></script>
+    <link rel="stylesheet" href="./js/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/pub.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <style>
+        /* 上导航 */
+        .gd{
+            display: flex;  
+            margin-top: 4px;  
+        }
+        .gd>span:first-child{  
+            font-size: 20px;
+            padding: 0 8px;   
+            color: #333;
+            line-height: 25px;   
+        } 
+        .gd>div{   
+            flex-grow: 1;   
+            display: flex;   
+            background-color: rgb(241, 241, 241);
+            border-radius: 16px;   
+            padding-right: 16px;  
+        }
+        .gd>div span{   
+            font-size: 14px;
+            margin: 0 8px;  
+            color: #666;
+            line-height: 25px;   
+        }
+        .gd input{ 
+            background-color: rgb(241, 241, 241);   
+            border: none;    
+            flex-grow: 1;   
+            outline: none;   
+            line-height: 25px;  
+        }
+        .gd .txt{
+            line-height: 25px;  
+            font-size: 14px;
+            margin: 0 12px; 
+            color: #333;
+        }
+
+        /* tab中tt */
+        .fengtab{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        } 
+        .swiper-slide{
+            text-align: center;
+            width: 20%;
+            font-size: 14px;
+            line-height: 28px;
+            background-color: #fff;
+        }
+        .swiper-slide:nth-child(8){
+            width: 27%;
+        }
+
+        /* 固定上导航，tt */
+        #tabfixed{  
+            width: 100%;  
+            left: 0;  
+            top: 33px;    
+            background-color: #fff;
+            border-bottom: 1px solid rgb(212, 212, 212);
+            border-top: 1px solid rgb(212, 212, 212);
+        }
+        #gdfixed{  
+            width: 100%;  
+            left: 0;  
+            top: 0;    
+            background-color: #fff;
+        }
+
+        /* tab */
+        .tt .cur{     
+            color: rgb(236, 13, 13);
+            border-bottom: 3px solid rgb(214, 19, 19);
+            background-color: #fff;
+        }
+        .tc{
+            display: block;
+        }
+
+        /* 内容 */
+        .neirong .tubiao{
+            display: flex;  
+            width: 100%;
+            flex-wrap: wrap;  
+            margin: 15px 0;
+        }
+        .neirong .icon{
+            font-size: 27px;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .neirong li{
+            width: 25%;
+            line-height: 30px;  
+            font-size: 13px;
+            text-align: center;
+            background-color: #fff;
+            color: rgba(65, 62, 62, .795);
+            box-sizing: border-box; 
+            margin-bottom: 10px;
+        }
+        .neirong span{
+            font-size: 20px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="gdfixed">
+        <div class="gd"> 
+            <span class="iconfont icon-zuojiantou1"></span>
+            <div>  
+                <span class="iconfont icon-sousuo"></span>  
+                <input type="text" placeholder="请输入">  
+            </div>
+            <span class="txt">编辑</span>
+        </div>
+    </div>
+
+    <div class="neirong">
+        <div id="head">
+            <div class="wodegongneng">
+                <span>我的功能</span>
+                <ul class="tubiao">   
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinyongkahuankuan"></use>
+                        </svg>
+                        <p>账号转账</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-fangdai"></use>
+                        </svg>
+                        <p>我的理财</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shoujihuafei"></use>
+                        </svg>
+                        <p>话费充值</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-licai11"></use>
+                        </svg>
+                        <p>理财</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yuechaxun"></use>
+                        </svg>
+                        <p>转账记录查询</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-xinyongka1"></use>
+                        </svg>
+                        <p>信用卡</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-yinhang"></use>
+                        </svg>
+                        <p>我的基金</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-liwu"></use>
+                        </svg>
+                        <p>热门活动</p>
+                    </li>
+                    <li>
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-shenghuojiaofei3"></use>
+                        </svg>
+                        <p>生活缴费</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tt">
+                <div id="tabfixed">
+                    <div class="swiper fengtab">   
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide a cur">查询</div>
+                            <div class="swiper-slide a">转账</div>
+                            <div class="swiper-slide a">我的持仓</div>
+                            <div class="swiper-slide a">财富</div>
+                            <div class="swiper-slide a">支付</div>
+                            <div class="swiper-slide a">信用卡</div>
+                            <div class="swiper-slide a">贷款</div>
+                            <div class="swiper-slide a">出境和外币服务</div>
+                            <div class="swiper-slide a">生活</div>
+                            <div class="swiper-slide a">网点</div>
+                            <div class="swiper-slide a">资金管理</div>
+                            <div class="swiper-slide a">安全中心</div>
+                            <div class="swiper-slide a">助手</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tc -->
+            <div class="tc">
+                <div class="chaxun">
+                    <span>查询</span>
+                    <ul class="tubiao"> 
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wodezhanghu"></use>
+                            </svg>
+                            <p>账户管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jiaoyichaxun"></use>
+                            </svg>
+                            <p>交易查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yuechaxun"></use>
+                            </svg>
+                            <p>转账记录查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-piaowu"></use>
+                            </svg>
+                            <p>支付记录查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhangben"></use>
+                            </svg>
+                            <p>收支记录</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-daikuan1"></use>
+                            </svg>
+                            <p>港澳同名汇入</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="zhuanzhang">
+                    <span>转账</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhuanzhang6"></use>
+                            </svg>
+                            <p>转账汇款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xinyongkahuankuan"></use>
+                            </svg>
+                            <p>账号转账</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-saomiao"></use>
+                            </svg>
+                            <p>二维码转账</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wangdian"></use>
+                            </svg>
+                                <p>跨境汇款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoujihuafei"></use>
+                            </svg>
+                            <p>手机号转账</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhangkazhuanzhang1"></use>
+                            </svg>
+                            <p>他行卡转入</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="wodechicang">
+                    <span>我的持仓</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>我的理财</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhang"></use>
+                            </svg>
+                            <p>我的基金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosexianxingduosedalou"></use>
+                            </svg>
+                            <p>我的结构性存款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chengshifuwu"></use>
+                            </svg>
+                            <p>我的账户贵金属</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiaofangzi"></use>
+                            </svg>
+                            <p>我的双向外汇宝</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jigou"></use>
+                            </svg>
+                            <p>我的双向账户</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>我的定期存款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhang"></use>
+                            </svg>
+                            <p>我的外汇</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>我的债券</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangzi"></use>
+                            </svg>
+                            <p>我的积存金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jigou"></use>
+                            </svg>
+                            <p>我的积利金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiaofangzi"></use>
+                            </svg>
+                            <p>我的保单</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="caifu">
+                    <span>财富</span>
+                    <ul class="tubiao"> 
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jigou"></use>
+                            </svg>
+                            <p>理财</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jijin"></use>
+                            </svg>
+                            <p>基金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-custom700"></use>
+                            </svg>
+                            <p>结构性存款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-caifu"></use>
+                            </svg>
+                            <p>余额基金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-baoxian"></use>
+                            </svg>
+                            <p>保险</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-cunkuan"></use>
+                            </svg>
+                            <p>存款管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosezixun"></use>
+                            </svg>
+                            <p>存单转让</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yuanbao"></use>
+                            </svg>
+                            <p>账户贵金属</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-duanqilicai"></use>
+                            </svg>
+                            <p>中银慧投</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-daikuan"></use>
+                            </svg>
+                            <p>结汇购汇</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chongzhi"></use>
+                            </svg>
+                            <p>外汇买卖</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhaiquan"></use>
+                            </svg>
+                            <p>债券</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-lishichaxun"></use>
+                            </svg>
+                            <p>双向外汇宝</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yuanbao"></use>
+                            </svg>
+                            <p>双向账户贵金属</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduoseyujing"></use>
+                            </svg>
+                            <p>贵金属积存</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosezuanshi"></use>
+                            </svg>
+                            <p>积利金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduoseyue"></use>
+                            </svg>
+                            <p>贵金属代理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jigou"></use>
+                            </svg>
+                            <p>大宗商品</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jijin"></use>
+                            </svg>
+                            <p>证券期货</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosexunzhang"></use>
+                            </svg>
+                            <p>证券交易</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangzi"></use>
+                            </svg>
+                            <p>代销资管</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduoselicai"></use>
+                            </svg>
+                            <p>宝宝存钱罐</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>跨境理财通</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosezuanshi"></use>
+                            </svg>
+                            <p>私人银行</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shenpi"></use>
+                            </svg>
+                            <p>合格投资者</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="zhifu">
+                    <span>支付</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-baoxian1"></use>
+                            </svg>
+                            <p>Apple Pay</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-saomiao"></use>
+                            </svg>
+                            <p>扫一扫</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-erweima4"></use>
+                            </svg>
+                            <p>付款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quanbu"></use>
+                            </svg>
+                            <p>收款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhangkazhuanzhang1"></use>
+                            </svg>
+                            <p>快捷支付</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-kabao2"></use>
+                            </svg>
+                            <p>支付管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jihuoka"></use>
+                            </svg>
+                            <p>一键绑卡</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-bodongfenxi"></use>
+                            </svg>
+                            <p>云闪付</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yue"></use>
+                            </svg>
+                            <p>数字人民币</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="xinyongka">
+                    <span>信用卡</span>
+                    <ul class="tubiao"> 
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xinyongka1"></use>
+                            </svg>
+                            <p>信用卡</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhangkazhuanzhang1"></use>
+                            </svg>
+                            <p>立即还款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yuechaxun"></use>
+                            </svg>
+                            <p>附属卡</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yue"></use>
+                            </svg>
+                            <p>额度管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhangka"></use>
+                            </svg>
+                            <p>信用卡申请</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiaoka"></use>
+                            </svg>
+                            <p>卡片激活</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zijinzhanbi"></use>
+                            </svg>
+                            <p>分期服务</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fenqifukuan"></use>
+                            </svg>
+                            <p>数字信用卡</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="daikuan">
+                    <span>贷款</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-daikuan1"></use>
+                            </svg>
+                            <p>贷款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-diya"></use>
+                            </svg>
+                            <p>我的贷款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shujujiankong"></use>
+                            </svg>
+                            <p>中银E贷</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduosejiankong"></use>
+                            </svg>
+                            <p>质押贷款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quanyizhongxin"></use>
+                            </svg>
+                            <p>贷款推荐</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduoseyuyan"></use>
+                            </svg>
+                            <p>贷款资金转出</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="chujinghewaibifuwu">
+                    <span>出境和外币服务</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-daikuan1"></use>
+                            </svg>
+                            <p>跨境汇款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chongzhi"></use>
+                            </svg>
+                            <p>结汇购汇</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhaiquan"></use>
+                            </svg>
+                            <p>买外币</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhangkazhuanzhang1"></use>
+                            </svg>
+                            <p>卖外币</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoucang"></use>
+                            </svg>
+                            <p>签证通</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-baoxian1"></use>
+                            </svg>
+                            <p>出境游保证金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quan"></use>
+                            </svg>
+                            <p>外币现钞预约</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>跨境收款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-licai2"></use>
+                            </svg>
+                            <p>留学贷款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-banka"></use>
+                            </svg>
+                            <p>留学卡激活</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-baogaochaxun"></use>
+                            </svg>
+                            <p>汇入汇款查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-licai11"></use>
+                            </svg>
+                            <p>全球账户管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quanyi"></use>
+                            </svg>
+                            <p>意外险</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-renwuzhongxin"></use>
+                            </svg>
+                            <p>存款证明</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chengshifuwu"></use>
+                            </svg>
+                            <p>港澳学费缴纳</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fenqihuankuan"></use>
+                            </svg>
+                            <p>薪酬结汇</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-dingdanchaxun"></use>
+                            </svg>
+                            <p>汇款进程查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-wodezhanghu"></use>
+                            </svg>
+                            <p>西联汇款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xuexi"></use>
+                            </svg>
+                            <p>中银留学汇款</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="shenghuo">
+                    <span>生活</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhengming"></use>
+                            </svg>
+                            <p>个人养老金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shenghuojiaofei3"></use>
+                            </svg>
+                            <p>生活缴费</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-a-ditiezhangaotiezhanhuochezhan"></use>
+                            </svg>
+                            <p>铁路e卡通</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhaiquan"></use>
+                            </svg>
+                            <p>优惠券</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-licaichanpin"></use>
+                            </svg>
+                            <p>养老一账通</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zixun"></use>
+                            </svg>
+                            <p>交通异地罚款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quan"></use>
+                            </svg>
+                            <p>非税收入缴款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-tixian"></use>
+                            </svg>
+                            <p>实时纳税</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shujutongji"></use>
+                            </svg>
+                            <p>社保缴费</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-yinhang"></use>
+                            </svg>
+                            <p>易房通</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhangben"></use>
+                            </svg>
+                            <p>委托代收</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zoushishuju"></use>
+                            </svg>
+                            <p>精彩特惠</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiaoka"></use>
+                            </svg>
+                            <p>预付卡</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xianxingduoseliwu"></use>
+                            </svg>
+                            <p>热门活动</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-baoxian1"></use>
+                            </svg>
+                            <p>中银保证金</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chongzhi"></use>
+                            </svg>
+                            <p>资金代管</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-renwuzhongxin"></use>
+                            </svg>
+                            <p>ETC</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quanyi"></use>
+                            </svg>
+                            <p>尊享权益</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chengshifuwu"></use>
+                            </svg>
+                            <p>乐知校园</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shengdan-wanou"></use>
+                            </svg>
+                            <p>BOBO鱼塘</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-faxian"></use>
+                            </svg>
+                            <p>BOBO留声机</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="wangdian">
+                    <span>网点</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fangdai"></use>
+                            </svg>
+                            <p>网点排队</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoucang"></use>
+                            </svg>
+                            <p>纪念币预约</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-quan"></use>
+                            </svg>
+                            <p>外币现钞预约</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-saomiao"></use>
+                            </svg>
+                            <p>扫码取款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiaoka"></use>
+                            </svg>
+                            <p>预约换卡</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="zijinguanli">
+                    <span>资金管理</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-dingdanchaxun"></use>
+                            </svg>
+                            <p>资金归集</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhangdan"></use>
+                            </svg>
+                            <p>资金划转</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhengming"></use>
+                            </svg>
+                            <p>签约管理</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="anquanzhongxin">
+                    <span>安全中心</span>
+                    <ul class="tubiao">
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-banka"></use>
+                            </svg>
+                            <p>卡片挂失</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fenqifukuan"></use>
+                            </svg>
+                            <p>限额管理</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-bangzhuzhongxin"></use>
+                            </svg>
+                            <p>登录密码</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jigou"></use>
+                            </svg>
+                            <p>人脸识别</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-huangjin"></use>
+                            </svg>
+                            <p>安全工具</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoujihuafei"></use>
+                            </svg>
+                            <p>绑定设备</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiatiao"></use>
+                            </svg>
+                            <p>预留信息</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhanghuzonglan"></use>
+                            </svg>
+                            <p>投资理财开关</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-lishichaxun"></use>
+                            </svg>
+                            <p>退出时间设定</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-licaichanpin"></use>
+                            </svg>
+                            <p>借记卡密码重置</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tc">
+                <div class="zhushou">
+                    <span>助手</span>
+                    <ul class="tubiao"> 
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-gengduo"></use>
+                            </svg>
+                            <p>汇率计算器</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jisuangongshi"></use>
+                            </svg>
+                            <p>贷款计算器</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-zhangdan"></use>
+                            </svg>
+                            <p>主动收款</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-banka"></use>
+                            </svg>
+                            <p>在线开户</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jiaoyichaxun"></use>
+                            </svg>
+                            <p>征信查询</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-huangjin"></use>
+                            </svg>
+                            <p>交易流水打印</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-licai2"></use>
+                            </svg>
+                            <p>电子印章验真</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-renwuzhongxin"></use>
+                            </svg>
+                            <p>我的账本</p>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-fenxiang"></use>
+                            </svg>
+                            <p>薪酬管家</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+    <!-- JavaScript -->
+    <!-- tab的tt横滑 -->
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".fengtab", {
+        slidesPerView: "auto",  
+        spaceBetween: 8,  
+        });
+    </script>
+
+
+    <!-- tab -->
+    <script>
+    var tab=document.getElementsByClassName("tab")[0];
+    var tt=tab.querySelector(".tt");
+    var span=tt.getElementsByClassName("a");
+    var tc=tab.getElementsByClassName("tc");
+
+    for(let i=0;i<span.length;i++){
+        span[i].index=i;   
+        console.log(i);
+        span[i].onmouseover=function(){    
+            for(let j=0;j<span.length;j++){
+                span[j].classList.remove("cur");  
+                tc[j].style.display="block";
+            }
+            span[i].classList.add("cur");   
+            for(let x=i-1;x>=0;x--){
+                tc[x].style.display="none";
+            }
+        }
+    } 
+    </script>
+
+
+    <!-- 滚动固定 上导航，tt -->
+    <script>
+        window.onscroll=function(){   
+           var tab=document.documentElement.scrollTop;   
+           console.log(tab);
+           if(tab>head.offsetHeight){      
+            tabfixed.style.position="fixed";  
+           }
+           else{   
+            tabfixed.style.position="static";  
+           }
+
+           var gd=document.documentElement.scrollTop;
+           if(gd>gdfixed.offsetHeight){      
+            gdfixed.style.position="fixed";  
+           }
+           else{   
+            gdfixed.style.position="static"; 
+           }
+        }
+    </script>
+
+</body>
+</html>
